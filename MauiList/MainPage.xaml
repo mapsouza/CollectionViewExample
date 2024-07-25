@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sho="http://sharpnado.com"
+             xmlns:mauiList="clr-namespace:MauiList"
+             x:Class="MauiList.MainPage">
+
+    <ContentPage.BindingContext>
+        <mauiList:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <sho:CollectionView CollectionLayout="Vertical"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand" 
+                            ItemWidth="0" BackgroundColor="Red"
+                            ItemHeight="80"
+                            ItemSpacing="0"
+                            InfiniteListLoader="{Binding MensagensPaginator}"
+                            ItemsSource="{Binding Mensagens}">
+            <sho:CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <sho:DraggableViewCell>
+                        <ContentView>
+                            <StackLayout>
+                            <Label Text="Descrição"/>
+                            <Label Text="{Binding Desc}"
+                                   HeightRequest="40" BackgroundColor="Green"
+                                   VerticalOptions="FillAndExpand"
+                                   HorizontalOptions="FillAndExpand">
+                                
+                            </Label>
+                            </StackLayout>
+                        </ContentView>
+                    </sho:DraggableViewCell>
+                </DataTemplate>
+            </sho:CollectionView.ItemTemplate>
+        </sho:CollectionView>
+
+    </ContentPage.Content>
+
+</ContentPage>
