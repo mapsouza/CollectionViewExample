@@ -22,7 +22,7 @@
                     <sho:DraggableViewCell>
                         <ContentView>
                             <StackLayout>
-                            <Label Text="Descrição"/>
+                            <Label Text="Descrição só para teste"/>
                             <Label Text="{Binding Desc}"
                                    HeightRequest="40" BackgroundColor="Green"
                                    VerticalOptions="FillAndExpand"
